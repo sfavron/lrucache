@@ -28,5 +28,6 @@ func LRUCache(size int) Cache {
 	return &lruCacheImpl{
 		maxSize:  size,
 		contents: make(map[string]interface{}, size),
+		access:   &history{},
 	}
 }
